@@ -23,7 +23,7 @@ components:{
 }
 </script>
 
-<style>
+<style scoped>
 .goodsList{
   display: flex;
   flex-wrap: wrap;

@@ -16,7 +16,7 @@ name:'NavBar'
 .navbar{
   width: 100%;
   height: 44px;
-  
+  position: relative;
   display: flex;
 text-align: center;
 line-height: 44px;

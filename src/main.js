@@ -6,6 +6,8 @@ import store from './store'
 Vue.config.productionTip = false
 import { Swipe, SwipeItem } from 'vant';
 
+Vue.prototype.$bus=new Vue()
+
 Vue.use(Swipe);
 Vue.use(SwipeItem);
 

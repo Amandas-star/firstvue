@@ -1,13 +1,12 @@
 <template>
-  <div class="goods-item">
-    <a :href="goodsItem.link">
-      <img :src="goodsItem.show.img" alt />
+  <div class="goods-item" @click="itemClick">
+      <img :src="showItem" @load="imageLoad">
       <div class="goods-info">
         <p>{{goodsItem.title}}</p>
         <span class="price">{{goodsItem.price}}</span>
         <span class="collect">{{goodsItem.cfav}}</span>
       </div>
-    </a>
+    
   </div>
 </template>
 
@@ -21,7 +20,20 @@ export default {
         return {};
       }
     }
-  }
+  },
+  computed:{
+showItem(){
+  return this.goodsItem.image ||this.goodsItem.show.img
+}
+  },
+  methods: {
+    imageLoad(){
+      this.$bus.$emit('itemImageLoad')
+    },
+    itemClick(){
+      this.$router.push('/detail/'+this.goodsItem.iid)
+    }
+  },
 };
 </script>
 
@@ -38,17 +50,17 @@ export default {
 .goods-info {
   font-size: 12px;
   position: absolute;
-  bottom: 7px;
+  bottom:10px;
   left: 0;
   right: 0;
   overflow: hidden;
   text-align: center;
+  
 }
 .goods-info p {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  margin-bottom: 3px;
 }
 .goods-info .price {
   color: red;

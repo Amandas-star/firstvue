@@ -23,20 +23,20 @@ export default {
   data() {
     // imageload函数的判断式
     return {
-      isload:false
+      isLoad:false
     }
   },
   components: {
     Swiper
   },
   methods: {
-    imageload(){
-      // 让发布给父组件的数据只发出一次，提高代码性能
-      if(!this.isload){
-      this.$emit('swiperimageload')
-      this.isload = true
-      }
-    }
+ imageload(){
+   //让发布给父组件的数据只发出一次，提高代码性能
+   if(!this.isLoad){
+     this.$emit('imageload')
+     this.isLoad=true
+   }
+ }
   },
 };
 </script>
@@ -48,5 +48,7 @@ export default {
 img {
   width: 100%;
   vertical-align: middle;
+  margin: 0;
 }
+
 </style>
