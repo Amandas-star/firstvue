@@ -46,7 +46,7 @@ totalCount(){
  },0)
 },
 isSelectAll(){
-  //原理：先遍历整个数组，！item.checked说明 是不选中的，若不选中的长度说明里面有没有选中的，这时给他取反就是false了第一种方法
+  //原理：先遍历整个数组，！item.checked说明 是不选中的，若不选中的长度说明里面有没有选中的，这时给他取反就是false了第一种方法 若里面有没选中的肯定就是true，这时在外面取反，若没有没选中的，肯定就找不到就是false,取反就是true
 //  return !(this.$store.state.cartList.filter(item=>!item.checked
 //   ).length)
 //第二种方法：find方法
